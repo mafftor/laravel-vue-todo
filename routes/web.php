@@ -13,4 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\ToDoController::class, 'index']);
+Route::get('/', function () {
+    return view('todo');
+});
+Route::resource('todo', \App\Http\Controllers\ToDoController::class);
